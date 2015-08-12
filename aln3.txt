@@ -1,3 +1,0 @@
-T T T C T C A T T G T A T G T C T T T A G C G T A T G C A A G T A - T G C C G T G A A C G T A T C G T G T G T A C G A G C A G T G C G A T G - C C A T T C G T G G T A T C C A T T C C A G - C T A T T G
-T T T C T C A - T G T G T G A C T T T A G C - G A T G C A A G T A T T G C C G T G A A C G T C T C G T G T G T A C G A G A A G T G C G A T G C A T A A T C G T C - A A T C C A T T C C A G C A T A T T G
-Score = 4494
