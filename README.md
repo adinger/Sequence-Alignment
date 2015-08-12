@@ -1,4 +1,4 @@
-Calculates the best alignment of two gene sequences, using a dynamic programming matrix to find the highest scoring alignment.
+Calculates the best global alignment of two gene sequences using a dynamic programming scoring matrix.
 
 Usage: 
 
