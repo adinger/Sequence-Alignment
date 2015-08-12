@@ -1,3 +1,5 @@
+#!/usr/bin/python2.7
+
 import numpy as np
 import sys
 from random import randint
@@ -18,22 +20,21 @@ def random_letter(l):
 
 def generate_sequence(s1):
 	s2 = list(s1)
-	for i in range(L/10):
-		position = randint(0,L-1)
-		change = randint(0,1)
-		#print("position is %d" % position)
-		#print("change is %d" % change)
-		if change==0:
+	length = len(s2)
+	for i in range(length/10):
+		position = randint(0,length-1)	# choose a position in the sequence to mutate
+		mutate = randint(0,1)	# 0 = change to a different character, 1 = delete that character
+		if mutate==0:
+			#print 'mutating', position
 			s2[position] = random_letter(s2[position])
 		else:
-			#print(s2[position])
+			#print 'deleting', position
 			del s2[position]
+			length -= 1 	# so you don't get index-out-of-bounds for sequence s2 in future iterations
 
 	return s2
 
-'''
-create s1 randomly
-'''
+#create s1 randomly
 s1 = []
 for i in range(L):
 	s1.append(random_letter('z'))
@@ -41,9 +42,7 @@ for i in range(L):
 s2 = generate_sequence(s1)
 s3 = generate_sequence(s1)
 
-'''
-write newly generated sequences to to seq1.fa and seq2.fa
-'''
+#write newly generated sequences to to seq1.fa and seq2.fa
 file1 = open("seq1.fa", "w")
 file1.write(">GAL1\n" + ''.join(s2))
 file2 = open("seq2.fa", "w")

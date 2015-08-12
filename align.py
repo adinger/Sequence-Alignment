@@ -1,17 +1,13 @@
 import numpy as np
 import sys
-'''
-read in program arguments
-'''
+
+#read in program arguments
 fasta_file1 = sys.argv[1]
 fasta_file2 = sys.argv[2]
 sub_matrix_file = sys.argv[3]
 gap_penalty = int(sys.argv[4])
-print(type(fasta_file1))
 
-'''
-extract sequences and their lengths to use as dimensions for matrix
-'''
+#extract sequences and their lengths to use as dimensions for matrix
 file1 = open(sys.argv[1], "r")
 lines1 = file1.readlines()
 len1 = len(lines1[1])
@@ -22,20 +18,14 @@ lines2 = file2.readlines()
 len2 = len(lines2[1])
 seq2 = "0"+lines2[1]
 
-'''
-parse sub.txt into a matrix
-'''
+#parse sub.txt into a matrix
 sub_matrix_file = sys.argv[3]
 
-'''
-create matrix of scores and previous directions (for backtracing)
-'''
+#create matrix of scores and previous directions (for backtracing)
 scores = np.ndarray((len2+1, len1+1), dtype=int)
 prevdirs = np.ndarray((len2+1, len1+1), dtype=object)
 
-'''
-create matrix of substitution rules
-'''
+#create matrix of substitution rules
 def parse_subs_file(subsfile):
 	ret = []
 	lines = subsfile.readlines()
@@ -101,6 +91,7 @@ def find_score_and_prevdir(r,c):
 populate matrix 
 (seq1 is horizontal 'axis', seq2 is vertical 'axis')
 '''
+
 # fill out col1 and row1 w/negative even numbers
 val = 0
 for c in range(len1+1):
@@ -121,11 +112,11 @@ for r in range(1,len2+1):
 #print("The score is ", scores[-1][-1])
 #print(scores)
 '''
-backtracing
+Backtrace the matrix.
 
-initialize a list to store directions
+Initialize a list to store directions.
 
-start from bottom-right-most cell:
+Starts from bottom-right cell:
 '''
 output1 = []
 output1.append(seq1[-1])
