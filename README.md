@@ -2,9 +2,9 @@ Calculates the best global alignment of two gene sequences using a dynamic progr
 
 Usage: 
 
-$ ./create_data_and_align.py [sequence length]
+`$ ./create_data_and_align.py [sequence-length]`
 
-e.g. 
-$ create_data_and_align.py 100
+Example:
+`$ create_data_and_align.py 100`
 
 Output: a .txt files containing the highest-scoring alighment
