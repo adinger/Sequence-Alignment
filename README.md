@@ -1,4 +1,5 @@
 Calculates the best global alignment of two gene sequences using a dynamic programming scoring matrix.
+Built with Python 2.
 
 ### Usage 
 
@@ -6,12 +7,12 @@ Calculates the best global alignment of two gene sequences using a dynamic progr
 
 Run the following, replacing sequence-length with the length of the sequences, which are assumed to be the same.
 ```
-./create_data_and_align.py [sequence-length]
+python create_data_and_align.py [sequence-length]
 ```
 
 Example:
 ```
-create_data_and_align.py 100
+python create_data_and_align.py 100
 ```
 
 ### Output
