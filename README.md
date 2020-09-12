@@ -1,10 +1,18 @@
 Calculates the best global alignment of two gene sequences using a dynamic programming scoring matrix.
 
-Usage: 
+### Usage 
 
-`$ ./create_data_and_align.py [sequence-length]`
+`seq1.fa` and `seq2.fa` contain the two gene sequences. They are assumed to be the same length.
+
+Run the following, replacing sequence-length with the length of the sequences, which are assumed to be the same.
+```
+./create_data_and_align.py [sequence-length]
+```
 
 Example:
-`$ create_data_and_align.py 100`
+```
+create_data_and_align.py 100
+```
 
-Output: a .txt files containing the highest-scoring alighment
+### Output
+A .txt file containing the highest-scoring alignment of the two gene sequences.
